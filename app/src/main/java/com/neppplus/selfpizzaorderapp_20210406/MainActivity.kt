@@ -29,6 +29,10 @@ class MainActivity : BaseActivity() {
         mainViewPager.adapter = mViewPagerAdapter
 
 //        여기까지하면 이제 프래그먼트 2개가 나타남. 하지만 탭레이아웃이 안보이니까 탭레이아웃작업하기
+
+        mainTabLayout.setupWithViewPager(mainViewPager)
+//        뷰페이저와 코틀린을 연결했음.(괄호안에는 뷰페이저변수)
+//        여기까지했지만 탭레이아웃의 제목이 안나옴 제목 넣어주러가자
     }
 
 
