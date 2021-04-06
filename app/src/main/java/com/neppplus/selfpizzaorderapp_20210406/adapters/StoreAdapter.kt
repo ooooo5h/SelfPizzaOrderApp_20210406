@@ -31,6 +31,11 @@ class StoreAdapter(
 
         val row = tempRow!!
 
+//        실제 데이터변수는 mList변수 (목록)안에 들어있따! 포지션에 맞는 데이터를 추출해라
+        val storeData = mList[position]
+
+
+
         return row
     }
 }
