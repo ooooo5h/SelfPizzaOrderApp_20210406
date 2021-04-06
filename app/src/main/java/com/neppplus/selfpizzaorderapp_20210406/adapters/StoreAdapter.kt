@@ -2,6 +2,8 @@ package com.neppplus.selfpizzaorderapp_20210406.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.neppplus.selfpizzaorderapp_20210406.R
 import com.neppplus.selfpizzaorderapp_20210406.datas.Store
@@ -15,4 +17,20 @@ class StoreAdapter(
 
 //    xml을 코틀린변수로 꺼내오도록 도와주는 클래스. LayoutInflater... = 이거 어렵군
     val inflater = LayoutInflater.from(mContext)
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
+//        기존의 결과를 버리고 새로운 결과를 만들자
+
+        var tempRow = convertView
+
+        if (tempRow == null) {
+            tempRow = inflater.inflate(R.layout.store_list_item, null)
+
+        }
+
+        val row = tempRow!!
+
+        return row
+    }
 }
