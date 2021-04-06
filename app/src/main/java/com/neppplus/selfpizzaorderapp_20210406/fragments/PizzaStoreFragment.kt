@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.neppplus.selfpizzaorderapp_20210406.R
 import com.neppplus.selfpizzaorderapp_20210406.adapters.StoreAdapter
 import com.neppplus.selfpizzaorderapp_20210406.datas.Store
+import kotlinx.android.synthetic.main.fragment_pizza_store.*
 
 class PizzaStoreFragment : Fragment() {
 
@@ -34,6 +35,7 @@ class PizzaStoreFragment : Fragment() {
 
 //    m어댑터의 대입을 진행했음. mContext가 아니라 화면이니까 액티비티고, 가게정보를 띄우는거니까 스토러리스트!!
     mPizzaStoreAdapter = StoreAdapter(activity!!, R.layout.store_list_item, mPizzaStoreList)
+    pizzaStoreListView.adapter = mPizzaStoreAdapter
 
 
 
