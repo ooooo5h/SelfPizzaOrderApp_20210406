@@ -7,12 +7,23 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.neppplus.selfpizzaorderapp_20210406.fragments.MyProfileFragment
 import com.neppplus.selfpizzaorderapp_20210406.fragments.PizzaStoreFragment
 
-
-
 // 프래그먼트를 위치에 맞게 뷰페이저에 뿌리자 -> adapter 활용하자는 뜻.
 // 뷰페이저어댑터는 프래그먼트페이저어댑터를 상속받는다!!!
 // 기본생성자 지원 안해. 클래스생성자를 커스터마이징해서 부모에게 전달 !!왜 저렇게 쓰는거지?
 class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
+
+
+//    왜 탭레이아웃의 제목을 메인뷰페이저어댑터에서하는거지...? 메인액티비티가 아니라?
+//    액티비티에는 바로 못띄우고, 어댑터를 껴야해서 그러는건가??
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when(position) {
+            0 -> "피자 주문"
+            else -> "내 정보 설정"
+        }
+    }
+
+
+
     override fun getItem(position: Int): Fragment {
         return when(position){
             0 -> PizzaStoreFragment()
